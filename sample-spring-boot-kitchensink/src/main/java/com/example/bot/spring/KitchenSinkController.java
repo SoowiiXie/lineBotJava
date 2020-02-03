@@ -536,7 +536,7 @@ public class KitchenSinkController {
             case "flex":
                 this.reply(replyToken, new ExampleFlexMessageSupplier().get());
                 break;
-            case "quickreply":
+            case "蛤":
                 this.reply(replyToken, new MessageWithQuickReplySupplier().get());
                 break;
             case "no_notify":
@@ -548,6 +548,7 @@ public class KitchenSinkController {
                 log.info("Returns echo message {}: {}", replyToken, text);
                 this.replyText(
                         replyToken,
+                        //text
                         "this is default"
                 );
                 break;
