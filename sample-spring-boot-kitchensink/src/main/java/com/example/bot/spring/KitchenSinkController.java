@@ -390,7 +390,7 @@ public class KitchenSinkController {
                         "Hello, my button",
                         Arrays.asList(
                                 new URIAction("Go to line.me",
-                                              URI.create("https://line.me"), null),
+                                              URI.create("https://www.facebook.com/soowii.xie"), null),
                                 new PostbackAction("Say hello1",
                                                    "hello こんにちは"),
                                 new PostbackAction("言 hello2",
