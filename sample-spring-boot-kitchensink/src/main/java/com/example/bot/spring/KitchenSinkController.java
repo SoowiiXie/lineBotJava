@@ -545,12 +545,12 @@ public class KitchenSinkController {
                            true);
                 break;
             default:
-                // log.info("Returns echo message {}: {}", replyToken, text);
-                // this.replyText(
-                //         replyToken,
-                //         //text
-                //         "this is default"
-                break;
+                log.info("Returns echo message {}: {}", replyToken, text);
+                this.replyText(
+                        replyToken,
+                        //text
+                        // "this is default"
+                        ""
                 );
                 break;
         }
