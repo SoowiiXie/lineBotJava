@@ -544,12 +544,12 @@ public class KitchenSinkController {
                            singletonList(new TextMessage("This message is send without a push notification")),
                            true);
                 break;
-            default:
-                log.info("Returns echo message {}: {}", replyToken, text);
-                this.replyText(
-                        replyToken,
-                        //text
-                        "this is default"
+            // default:
+            //     log.info("Returns echo message {}: {}", replyToken, text);
+            //     this.replyText(
+            //             replyToken,
+            //             //text
+            //             "this is default"
                 );
                 break;
         }
