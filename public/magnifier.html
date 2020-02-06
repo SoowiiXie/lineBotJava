@@ -12,9 +12,9 @@
 
         #demo {
             display: block;
-            width: 250px;
-            height: 250px;
-            margin: 50px;
+            width: 170px;
+            height: 170px;
+            margin: 5px;
             position: relative;
             border: 1px solid #ccc;
         }
@@ -25,8 +25,8 @@
         }
 
         #floatIMG {
-            width: 250px;
-            height: 250px;
+            width: 170px;
+            height: 170px;
         }
 
         #small-box {
@@ -46,7 +46,8 @@
             display: none;
             position: absolute;
             top: 0;
-            left: 250px;
+            left: 220px;
+            top: 5px;
             width: 500px;
             height: 500px;
             overflow: hidden;
@@ -65,6 +66,14 @@
 
 <body>
     <div id="demo">
+        <div id="float-box">
+            <div id="small-box"></div>
+            <img src="img/max-bender-685474-unsplash.jpg" alt="嘟嘟車" id="floatIMG">
+        </div>
+        <div id="float-box">
+            <div id="small-box"></div>
+            <img src="img/max-bender-685474-unsplash.jpg" alt="嘟嘟車" id="floatIMG">
+        </div>
         <div id="float-box">
             <div id="small-box"></div>
             <img src="img/max-bender-685474-unsplash.jpg" alt="嘟嘟車" id="floatIMG">
@@ -105,7 +114,7 @@
                 var smallBboxWidth = smallBbox.offsetWidth;
                 var smallBboxHeight = smallBbox.offsetHeight;
                 //滑鼠可以移動的最大XY的距離
-                var maxX = demoWidth - smallBboxWidth;
+                var maxX = demoWidth - smallBboxWidth - 2 /* 2 = border*2 */;
                 var maxY = demoHeight - smallBboxHeight;
 
 
