@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>版面排版-基本認識</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		#demo {
+			display: block;
+			width: 170px;
+			height: 170px;
+			margin: 5px;
+			position: relative;
+			border: 1px solid #ccc;
+		}
+
+		#float-box {
+			position: relative;
+			z-index: 1;
+		}
+
+		#floatIMG {
+			width: 170px;
+			height: 170px;
+		}
+
+		#small-box {
+			display: none;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			background: #ffffcc;
+			border: 1px solid #ccc;
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			cursor: move;
+		}
+
+
+		#big-box {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 220px;
+			top: 5px;
+			width: 500px;
+			height: 500px;
+			overflow: hidden;
+			border: 1px solid #ccc;
+			z-index: 1;
+		}
+
+		#big-box img {
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			z-index: 5;
+		}
+
+		body {
+			width: 900px;
+			margin: 40px auto;
+		}
+
+		#all {
+			width: 802px;
+			height: auto;
+			margin: 10px auto;
+			position: absolute;
+		}
+
+		#left {
+			width: 300px;
+			float: left;
+			text-align: center;
+		}
+
+		#left img {
+			width: 100px;
+			height: 80px;
+			margin: 10px;
+		}
+
+		#left img:last-child {
+			text-align: left;
+			display: block;
+			margin-left: 38px;
+		}
+
+		#right {
+			width: 500px;
+			float: left;
+			height: auto;
+		}
+
+		#right img {
+			width: 100%;
+			height: auto;
+		}
+
+		/*因為寬度剛好分配完,如果是一個300px,一個200px,那麼則建議第二個float應設為right,才能達成雙蘭顯示效果*/
+		p {
+			position: absolute;
+			left: 65%;
+			top: 60%;
+		}
+
+		#up,
+		#down {
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function showBig(e) {
+
+			if (e.target.id == 'left' || e.target.id == 'right' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'all') {
+
+			}
+			else {
+				var picinfo = parseInt(document.getElementsByTagName('img')[11].id);
+				if (e.target.id == 'up') {
+					picinfo = picinfo == 1 ? 11 : picinfo - 1;
+				} else if (e.target.id == 'down') {
+					picinfo = picinfo == 11 ? 1 : picinfo + 1;
+				} else {
+					picinfo = e.target.id;
+				}
+				document.getElementById('right').innerHTML = "<img src= p" + picinfo + ".jpg id='" + picinfo + "'><br>"
+			}
+		}
+		// window.onload = function () {
+		// 	document.getElementById('all').addEventListener('click', showBig, false);
+		// 	// document.getElementById('p').addEventListener('click', showBig, false);
+		// }
+		window.onload = function () {
+			document.getElementById('all').addEventListener('click', showBig, false);
+
+			//獲取到需要的元素
+			var demo = document.getElementById('demo');
+			var smallBbox = document.getElementById('small-box');
+			var floatBox = document.getElementById('float-box');
+			var bigBox = document.getElementById('big-box');
+			var bigBoxImg = bigBox.getElementsByTagName('img')[0];
+
+
+			floatBox.onmouseover = function () {
+				smallBbox.style.display = "block";
+				bigBox.style.display = "block";
+			}
+			floatBox.onmouseout = function () {
+				smallBbox.style.display = "none";
+				bigBox.style.display = "none";
+			}
+			floatBox.onmousemove = function (e) {
+				var _event = e || event;
+				console.log(_event.clientY);
+				var l = _event.clientX - demo.offsetLeft - floatBox.offsetLeft - smallBbox.offsetWidth / 2;//除2是因為讓滑鼠點出現在放大遮罩的中心位置
+				var t = _event.clientY - demo.offsetTop - floatBox.offsetTop - smallBbox.offsetHeight / 2;
+
+				var demoWidth = demo.offsetWidth;
+				var demoHeight = demo.offsetHeight;
+
+
+				var smallBboxWidth = smallBbox.offsetWidth;
+				var smallBboxHeight = smallBbox.offsetHeight;
+				//滑鼠可以移動的最大XY的距離
+				var maxX = demoWidth - smallBboxWidth - 2 /* 2 = border*2 */;
+				var maxY = demoHeight - smallBboxHeight;
+
+
+				l = Math.min(maxX, Math.max(0, l));
+				t = Math.min(maxY, Math.max(0, t));
+				smallBbox.style.left = l + "px";
+				smallBbox.style.top = t + "px";
+
+
+				var percentX = l / (floatBox.offsetWidth - smallBboxWidth);//求出小圖遮罩的座標佔可移動區域的比例
+				var percentY = t / (floatBox.offsetHeight - smallBboxHeight);
+
+
+				bigBoxImg.style.left = -percentX * (bigBoxImg.offsetWidth - bigBox.offsetWidth) + "px";//大圖對的移動方向和小圖遮罩的移動方向相反
+				bigBoxImg.style.top = -percentY * (bigBoxImg.offsetHeight - bigBox.offsetHeight) + "px";
+
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div id="all">
+		<div id="left">
+			<div id="float-box">
+				<div id="small-box"></div>
+				<img src="p1.jpg" alt="" id="1">
+			</div>
+			<img src="p1.jpg" alt="" id="1">
+			<img src="p2.jpg" alt="" id="2">
+			<img src="p3.jpg" alt="" id="3">
+			<img src="p4.jpg" alt="" id="4">
+			<img src="p5.jpg" alt="" id="5">
+			<img src="p6.jpg" alt="" id="6">
+			<img src="p7.jpg" alt="" id="7">
+			<img src="p8.jpg" alt="" id="8">
+			<img src="p9.jpg" alt="" id="9">
+			<img src="p10.jpg" alt="" id="10">
+			<img src="p11.jpg" alt="" id="11">
+		</div>
+		<div id="right">
+			<div id="big-box">
+				<img src="p1.jpg" alt="" id="1">
+			</div>
+		</div>
+		<div id="botton">
+			<p style="text-align: center;" id="p"><input type="button" value="上一張" name="" id='up'> <input type="button"
+					value="下一張" name="" id='down'></p>
+		</div>
+	</div>
+
+</body>
+
+</html>
+<!-- 說明:
+現在的頁面排版方式有單欄排版、雙欄排版、多欄排版、混和排版等等。
+我們將利用div+css來熟悉相關作法
+1:設計id代號為all的div標籤寬度為800px 高度自動 且水平置中 這就是常見的單欄式排版
+2:接著我們要做左右雙欄的排版效果 
+  請將id代號為left的div標籤寬度為300px 浮動靠左
+  請將id代號為right的div標籤寬度為500px 浮動靠左
+  這就是常見的雙欄式浮動排版
+3:請將id代號為left的div標籤內的影像設計適合的寬度與高度
+4:請將id代號為right的div標籤內的影像設計適合的寬度與高度
+
+  **善用外層DIV來決定寬高度與位置 可以讓其他區塊的排版更容易!! -->
