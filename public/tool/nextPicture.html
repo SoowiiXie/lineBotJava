@@ -5,76 +5,82 @@
 	<meta charset="UTF-8">
 	<title>版面排版-基本認識</title>
 	<style type="text/css">
-		body{
+		body {
 			width: 900px;
 			margin: 40px auto;
 		}
-		#all{
+
+		#all {
 			width: 802px;
 			height: auto;
 			margin: 10px auto;
 			position: absolute;
 		}
-		#left{
+
+		#left {
 			width: 300px;
 			float: left;
 			text-align: center;
 		}
-		#left img{
+
+		#left img {
 			width: 100px;
 			height: 80px;
 			margin: 10px;
 		}
-		#left img:last-child{
+
+		#left img:last-child {
 			text-align: left;
 			display: block;
-			margin-left: 38px; 
+			margin-left: 38px;
 		}
-		#right{
+
+		#right {
 			width: 500px;
 			float: left;
 			height: auto;
 		}
-		#right img{
+
+		#right img {
 			width: 100%;
 			height: auto;
 		}
+
 		/*因為寬度剛好分配完,如果是一個300px,一個200px,那麼則建議第二個float應設為right,才能達成雙蘭顯示效果*/
 		p {
 			position: absolute;
 			left: 65%;
 			top: 60%;
 		}
-		#up , #down{
+
+		#up,
+		#down {
 			cursor: pointer;
-		}		
-
-
+		}
 	</style>
 	<script>
 		function showBig(e) {
 
-			if (e.target.id == 'left' || e.target.id == 'right' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'all') {
-			
-			}
-			else{
+			if (e.target.id == 'left' || e.target.id == 'right' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'all') { }
+			else {
 				var picinfo = parseInt(document.getElementsByTagName('img')[11].id);
-				if(e.target.id == 'up'){
-					picinfo = picinfo==1? 11 : picinfo - 1;
-				}else if(e.target.id == 'down') {
-					picinfo = picinfo==11? 1 : picinfo + 1;
-				}else{
+				if (e.target.id == 'up') {
+					picinfo = picinfo == 1 ? 11 : picinfo - 1;
+				} else if (e.target.id == 'down') {
+					picinfo = picinfo == 11 ? 1 : picinfo + 1;
+				} else {
 					picinfo = e.target.id;
 				}
-				document.getElementById('right').innerHTML="<img src= p"+ picinfo +".jpg id='"+ picinfo +"'><br>"
+				document.getElementById('right').innerHTML = "<img src= p" + picinfo + ".jpg id='" + picinfo + "'><br>"
 			}
 		}
-		window.onload=function(){
-		document.getElementById('all').addEventListener('click', showBig, false);
-		// document.getElementById('p').addEventListener('click', showBig, false);
+		window.onload = function () {
+			document.getElementById('all').addEventListener('click', showBig, false);
+			// document.getElementById('p').addEventListener('click', showBig, false);
 		}
 	</script>
 </head>
+
 <body>
 	<div id="all">
 		<div id="left">
@@ -94,11 +100,13 @@
 			<img src="p10.jpg" alt="" id="10">
 		</div>
 		<div id="botton">
-			<p style="text-align: center;" id="p"><input type="button" value="上一張" name="" id='up'> <input type="button" value="下一張" name="" id='down'></p>
+			<p style="text-align: center;" id="p"><input type="button" value="上一張" name="" id='up'> <input type="button"
+					value="下一張" name="" id='down'></p>
 		</div>
 	</div>
-	
+
 </body>
+
 </html>
 <!-- 說明:
 現在的頁面排版方式有單欄排版、雙欄排版、多欄排版、混和排版等等。

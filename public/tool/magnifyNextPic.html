@@ -10,10 +10,14 @@
             margin: 0;
         }
 
+        p {
+            margin: 5px;
+        }
+
         #demo {
             display: block;
-            width: 170px;
-            height: 170px;
+            width: 180px;
+            height: 100px;
             margin: 5px;
             position: relative;
             border: 1px solid #ccc;
@@ -24,10 +28,15 @@
             z-index: 1;
         }
 
-        #floatIMG {
+        img {
+            width: 180px;
+            height: 100px;
+        }
+
+        /* #floatIMG {
             width: 170px;
             height: 170px;
-        }
+        } */
 
         #small-box {
             display: none;
@@ -48,16 +57,16 @@
             top: 0;
             left: 220px;
             top: 5px;
-            width: 500px;
-            height: 500px;
+            width: 1000px;
+            height: 550px;
             overflow: hidden;
             border: 1px solid #ccc;
             z-index: 1;
         }
 
         #big-box img {
-            width: 800px;
-            height: 800px;
+            height: auto;
+            width: 1200px;
             position: absolute;
             z-index: 5;
         }
@@ -68,24 +77,71 @@
     <div id="demo">
         <div id="float-box">
             <div id="small-box"></div>
-            <img src="p1.jpg" alt="嘟嘟車" id="floatIMG">
+            <img src="p1.jpg" id="floatIMG">
         </div>
-
+        <div id="botton">
+            <p style="text-align: center;" id="p">
+                <input type="button" value="上一張" name="" id='up'>
+                <input type="button" value="下一張" name="" id='down'>
+            </p>
+        </div>
+        <div id="left">
+            <img src="p1.jpg" alt="" id="1" class="onOnKan">
+            <img src="p2.jpg" alt="" id="2" class="onOnKan">
+            <img src="p3.jpg" alt="" id="3" class="onOnKan">
+            <img src="p4.jpg" alt="" id="4" class="onOnKan">
+            <img src="p5.jpg" alt="" id="5" class="onOnKan">
+            <img src="p6.jpg" alt="" id="6" class="onOnKan">
+        </div>
         <div id="big-box">
             <img src="p1.jpg">
         </div>
     </div>
     <script type="text/javascript">
-        window.onload = function () {
+        // var up = document.getElementById('up');
+        // var down = document.getElementById('down');
+        // function showBig(e) {
+        // if (e.target.id == 'float-box' || e.target.id == 'small-box' || e.target.id == 'left' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'demo' || e.target.id == 'big-box') { }
+        // else {
+        var picinfo = parseInt(1);
+        function showBig(e) {
+            if (e.target.id == 'up') {
+                picinfo = picinfo == 1 ? 6 : picinfo - 1;
+                console.log(picinfo);
+            } else if (e.target.id == 'down') {
+                picinfo = picinfo == 6 ? 1 : picinfo + 1;
+                console.log(picinfo);
+            }
+            document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+            document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
+            init();
+        }
+        // }
 
-            //獲取到需要的元素
+        // }
+        // up.onclick = function () {
+        //     picinfo = picinfo == 1 ? 6 : picinfo - 1;
+        //     console.log(picinfo);
+        //     document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+        //     document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
+        //     init();
+        // }
+        // down.onclick = function () {
+        //     picinfo = picinfo == 6 ? 1 : picinfo + 1;
+        //     console.log(picinfo);
+        //     document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+        //     document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
+        //     init();
+        // }
+        window.onload = init;
+        function init() {
+            document.getElementById('demo').addEventListener('click', showBig, false);
+            var onOnKan = document.getElementsByClassName('onOnKan');
             var demo = document.getElementById('demo');
             var smallBbox = document.getElementById('small-box');
             var floatBox = document.getElementById('float-box');
             var bigBox = document.getElementById('big-box');
             var bigBoxImg = bigBox.getElementsByTagName('img')[0];
-
-
             floatBox.onmouseover = function () {
                 smallBbox.style.display = "block";
                 bigBox.style.display = "block";
@@ -124,6 +180,15 @@
                 bigBoxImg.style.left = -percentX * (bigBoxImg.offsetWidth - bigBox.offsetWidth) + "px";//大圖對的移動方向和小圖遮罩的移動方向相反
                 bigBoxImg.style.top = -percentY * (bigBoxImg.offsetHeight - bigBox.offsetHeight) + "px";
 
+            }
+            for (var i = 0; i < onOnKan.length; i++) {
+                onOnKan[i].onclick = function (e) {
+                    picinfo = parseInt(e.target.id);
+                    console.log(picinfo);
+                    document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+                    document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
+                    init();
+                }
             }
         }
     </script>
