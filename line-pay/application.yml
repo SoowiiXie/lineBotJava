@@ -13,12 +13,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 line.bot:
-  channel-token: "vaX+LrPhOXY5Y9jWPHp229VCCypEgtQ9V9yU7rylq9oNUd5DXaIoa8uxQiXcvgYdUJo5+TU9o+9cJmLGE2MTKWGXO/Gc3FAzy7tKR4/lzdOXUwsxQTv7o4FqTOJbwo94AhR05Qm9zixS3Rc2jNHvyAdB04t89/1O/w1cDnyilFU="
-  channel-secret: "32883017165fab394ce84721814a83e8"
+  channel-token: 'vaX+LrPhOXY5Y9jWPHp229VCCypEgtQ9V9yU7rylq9oNUd5DXaIoa8uxQiXcvgYdUJo5+TU9o+9cJmLGE2MTKWGXO/Gc3FAzy7tKR4/lzdOXUwsxQTv7o4FqTOJbwo94AhR05Qm9zixS3Rc2jNHvyAdB04t89/1O/w1cDnyilFU='
+  channel-secret: '32883017165fab394ce84721814a83e8'
   handler.path: /callback
 
-line_pay_channel_id: "1653839045"
-line_pay_channel_secret: "7df947ce3ae22422b7319419a1e4d8a5"
 # To remove Client wire logs. Please comment out following lines.
 # See: https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
 #
