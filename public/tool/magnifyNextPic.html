@@ -92,6 +92,9 @@
             <img src="p4.jpg" alt="" id="4" class="onOnKan">
             <img src="p5.jpg" alt="" id="5" class="onOnKan">
             <img src="p6.jpg" alt="" id="6" class="onOnKan">
+            <img src="p7.jpg" alt="" id="7" class="onOnKan">
+            <img src="p8.jpg" alt="" id="8" class="onOnKan">
+            <img src="p9.jpg" alt="" id="9" class="onOnKan">
         </div>
         <div id="big-box">
             <img src="p1.jpg">
@@ -106,10 +109,10 @@
         var picinfo = parseInt(1);
         function showBig(e) {
             if (e.target.id == 'up') {
-                picinfo = picinfo == 1 ? 6 : picinfo - 1;
+                picinfo = picinfo == 1 ? 9 : picinfo - 1;
                 console.log(picinfo);
             } else if (e.target.id == 'down') {
-                picinfo = picinfo == 6 ? 1 : picinfo + 1;
+                picinfo = picinfo == 9 ? 1 : picinfo + 1;
                 console.log(picinfo);
             }
             document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
