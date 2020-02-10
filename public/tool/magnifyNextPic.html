@@ -66,10 +66,11 @@
 
         #big-box img {
             height: auto;
-            width: 1200px;
+            width: 2200px;
             position: absolute;
             z-index: 5;
         }
+
     </style>
 </head>
 
@@ -95,6 +96,7 @@
             <img src="p7.jpg" alt="" id="7" class="onOnKan">
             <img src="p8.jpg" alt="" id="8" class="onOnKan">
             <img src="p9.jpg" alt="" id="9" class="onOnKan">
+            <img src="p10.jpg" alt="" id="10" class="onOnKan">
         </div>
         <div id="big-box">
             <img src="p1.jpg">
@@ -107,15 +109,17 @@
         // if (e.target.id == 'float-box' || e.target.id == 'small-box' || e.target.id == 'left' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'demo' || e.target.id == 'big-box') { }
         // else {
         var picinfo = parseInt(1);
+
         function showBig(e) {
             if (e.target.id == 'up') {
-                picinfo = picinfo == 1 ? 9 : picinfo - 1;
+                picinfo = picinfo == 1 ? 10 : picinfo - 1;
                 console.log(picinfo);
             } else if (e.target.id == 'down') {
-                picinfo = picinfo == 9 ? 1 : picinfo + 1;
+                picinfo = picinfo == 10 ? 1 : picinfo + 1;
                 console.log(picinfo);
             }
-            document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+            document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo +
+                ".jpg' id='floatIMG'>";
             document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
             init();
         }
@@ -137,6 +141,7 @@
         //     init();
         // }
         window.onload = init;
+
         function init() {
             document.getElementById('demo').addEventListener('click', showBig, false);
             var onOnKan = document.getElementsByClassName('onOnKan');
@@ -156,7 +161,8 @@
             floatBox.onmousemove = function (e) {
                 var _event = e || event;
                 console.log(_event.clientY);
-                var l = _event.clientX - demo.offsetLeft - floatBox.offsetLeft - smallBbox.offsetWidth / 2;//除2是因為讓滑鼠點出現在放大遮罩的中心位置
+                var l = _event.clientX - demo.offsetLeft - floatBox.offsetLeft - smallBbox.offsetWidth /
+                    2; //除2是因為讓滑鼠點出現在放大遮罩的中心位置
                 var t = _event.clientY - demo.offsetTop - floatBox.offsetTop - smallBbox.offsetHeight / 2;
 
                 var demoWidth = demo.offsetWidth;
@@ -166,7 +172,7 @@
                 var smallBboxWidth = smallBbox.offsetWidth;
                 var smallBboxHeight = smallBbox.offsetHeight;
                 //滑鼠可以移動的最大XY的距離
-                var maxX = demoWidth - smallBboxWidth - 2 /* 2 = border*2 */;
+                var maxX = demoWidth - smallBboxWidth - 2 /* 2 = border*2 */ ;
                 var maxY = demoHeight - smallBboxHeight;
 
 
@@ -176,11 +182,12 @@
                 smallBbox.style.top = t + "px";
 
 
-                var percentX = l / (floatBox.offsetWidth - smallBboxWidth);//求出小圖遮罩的座標佔可移動區域的比例
+                var percentX = l / (floatBox.offsetWidth - smallBboxWidth); //求出小圖遮罩的座標佔可移動區域的比例
                 var percentY = t / (floatBox.offsetHeight - smallBboxHeight);
 
 
-                bigBoxImg.style.left = -percentX * (bigBoxImg.offsetWidth - bigBox.offsetWidth) + "px";//大圖對的移動方向和小圖遮罩的移動方向相反
+                bigBoxImg.style.left = -percentX * (bigBoxImg.offsetWidth - bigBox.offsetWidth) +
+                    "px"; //大圖對的移動方向和小圖遮罩的移動方向相反
                 bigBoxImg.style.top = -percentY * (bigBoxImg.offsetHeight - bigBox.offsetHeight) + "px";
 
             }
@@ -188,12 +195,14 @@
                 onOnKan[i].onclick = function (e) {
                     picinfo = parseInt(e.target.id);
                     console.log(picinfo);
-                    document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" + picinfo + ".jpg' id='floatIMG'>";
+                    document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='p" +
+                        picinfo + ".jpg' id='floatIMG'>";
                     document.getElementById('big-box').innerHTML = "<img src='p" + picinfo + ".jpg'>";
                     init();
                 }
             }
         }
+
     </script>
 </body>
 
