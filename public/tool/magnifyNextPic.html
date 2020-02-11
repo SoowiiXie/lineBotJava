@@ -33,6 +33,15 @@
             height: 100px;
         }
 
+        #qrCode-box {
+            border: 0px;
+        }
+
+        #qrCode-box img {
+            width: auto;
+            height: auto;
+        }
+
         /* #floatIMG {
             width: 170px;
             height: 170px;
@@ -76,6 +85,9 @@
 
 <body>
     <div id="demo">
+        <div id="qrCode-box">
+
+        </div>
         <div id="float-box">
             <div id="small-box"></div>
             <img src="p1.jpg" id="floatIMG">
@@ -83,21 +95,25 @@
         <div id="botton">
             <p style="text-align: center;" id="p">
                 <input type="button" value="上一張" name="" id='up'>
-                <input type="button" value="買買買" name="" id='buy'>
+                <!-- <input type="button" value="買買買" name="" id='buy'> -->
                 <input type="button" value="下一張" name="" id='down'>
             </p>
         </div>
+
         <div id="left">
-            <img src="p1.jpg" alt="" id="1" class="onOnKan">
-            <img src="p2.jpg" alt="" id="2" class="onOnKan">
-            <img src="p3.jpg" alt="" id="3" class="onOnKan">
-            <img src="p4.jpg" alt="" id="4" class="onOnKan">
-            <img src="p5.jpg" alt="" id="5" class="onOnKan">
-            <img src="p6.jpg" alt="" id="6" class="onOnKan">
-            <img src="p7.jpg" alt="" id="7" class="onOnKan">
-            <img src="p8.jpg" alt="" id="8" class="onOnKan">
-            <img src="p9.jpg" alt="" id="9" class="onOnKan">
-            <img src="p10.jpg" alt="" id="10" class="onOnKan">
+            <FORM method="POST" action="Hello"></FORM>
+            <input type="SUBMIT" value="買了"><br>
+            1.<input type="checkbox" value="1"><img src="p1.jpg" alt="" id="1" class="onOnKan">
+            2.<input type="checkbox" value="2"><img src="p2.jpg" alt="" id="2" class="onOnKan">
+            3.<input type="checkbox" value="3"><img src="p3.jpg" alt="" id="3" class="onOnKan">
+            4.<input type="checkbox" value="4"><img src="p4.jpg" alt="" id="4" class="onOnKan">
+            5.<input type="checkbox" value="5"><img src="p5.jpg" alt="" id="5" class="onOnKan">
+            6.<input type="checkbox" value="6"><img src="p6.jpg" alt="" id="6" class="onOnKan">
+            7.<input type="checkbox" value="7"><img src="p7.jpg" alt="" id="7" class="onOnKan">
+            8.<input type="checkbox" value="8"><img src="p8.jpg" alt="" id="8" class="onOnKan">
+            9.<input type="checkbox" value="9"><img src="p9.jpg" alt="" id="9" class="onOnKan">
+            10.<input type="checkbox" value="10"><img src="p10.jpg" alt="" id="10" class="onOnKan">
+            </FORM>
         </div>
         <div id="big-box">
             <img src="p1.jpg">
@@ -145,12 +161,17 @@
 
         function init() {
             document.getElementById('demo').addEventListener('click', showBig, false);
+            document.getElementById('qrCode-box').innerHTML =
+                "<img src=https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=" + location.href +
+                "&choe=UTF-8/><br>";
+
             var onOnKan = document.getElementsByClassName('onOnKan');
             var demo = document.getElementById('demo');
             var smallBbox = document.getElementById('small-box');
             var floatBox = document.getElementById('float-box');
             var bigBox = document.getElementById('big-box');
             var bigBoxImg = bigBox.getElementsByTagName('img')[0];
+
             floatBox.onmouseover = function () {
                 smallBbox.style.display = "block";
                 bigBox.style.display = "block";
