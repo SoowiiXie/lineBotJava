@@ -4,12 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>放大、下一張、點選</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style type="text/css">
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
         p {
             margin: 5px;
         }
@@ -94,15 +91,18 @@
         </div>
         <div id="botton">
             <p style="text-align: center;" id="p">
-                <input type="button" value="上一張" name="" id='up'>
+                <!-- <input type="button" value="上一張" name="" id='up'> -->
+                <a href="#" class="btn btn-primary" id='up'>上一張</a>
                 <!-- <input type="button" value="買買買" name="" id='buy'> -->
-                <input type="button" value="下一張" name="" id='down'>
+                <!-- <input type="button" value="下一張" name="" id='down'> -->
+                <a href="#" class="btn btn-primary" id='down'>下一張</a>
             </p>
         </div>
 
         <div id="left">
             <FORM method="POST" action="Hello"></FORM>
-            <input type="SUBMIT" value="買了"><br>
+            <!-- <input type="SUBMIT" value="買了"> -->
+            <a href="#" class="btn btn-success">買了</a><br>
             1.<input type="checkbox" value="1"><img src="images/p1.png" alt="" id="1" class="onOnKan">
             2.<input type="checkbox" value="2"><img src="images/p2.png" alt="" id="2" class="onOnKan">
             3.<input type="checkbox" value="3"><img src="images/p3.png" alt="" id="3" class="onOnKan">
