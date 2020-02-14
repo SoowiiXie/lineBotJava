@@ -33,14 +33,12 @@ main {
   background-color: #A9E8DC;
   border-radius: 7px 7px 0 0;
 }
-
 .bio h1 {
   font-weight: 300;
   font-size: 2rem;
   margin-top: 20px;
   margin-bottom: 15px;
 }
-
 .bio h2 {
   font-weight: 200;
   font-size: 1rem;
@@ -71,7 +69,6 @@ main {
   background-color: white;
   border-radius: 0 0 7px 7px;
 }
-
 .download a {
   display: block;
   margin-left: auto;
@@ -91,7 +88,6 @@ main {
   font-size: 2rem;
   margin: 35px 0 30px 0;
 }
-
 .about p {
   line-height: 27px;
   color: gray;
@@ -117,18 +113,19 @@ hr {
   margin-bottom: 30px;
 }
 
-.skills h1, .contacts h1 {
+.skills h1,
+.contacts h1 {
   font-weight: 200;
   font-size: 1.5rem;
   margin: 20px 0 20px 0;
 }
-
-.skills li, .contacts li {
+.skills li,
+.contacts li {
   line-height: 40px;
   font-weight: 300;
 }
-
-.skills i, .contacts i {
+.skills i,
+.contacts i {
   color: gray;
   font-size: 1.2rem;
   margin-right: 10px;
