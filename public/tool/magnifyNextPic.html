@@ -113,6 +113,7 @@
             8.<input type="checkbox" value="8"><img src="images/p8.png" alt="" id="8" class="onOnKan">
             9.<input type="checkbox" value="9"><img src="images/p9.png" alt="" id="9" class="onOnKan">
             10.<input type="checkbox" value="10"><img src="images/p10.png" alt="" id="10" class="onOnKan">
+            11.<input type="checkbox" value="11"><img src="images/p11.png" alt="" id="11" class="onOnKan">
             </FORM>
         </div>
         <div id="big-box">
@@ -129,10 +130,10 @@
 
         function showBig(e) {
             if (e.target.id == 'up') {
-                picinfo = picinfo == 1 ? 10 : picinfo - 1;
+                picinfo = picinfo == 1 ? 11 : picinfo - 1;
                 console.log(picinfo);
             } else if (e.target.id == 'down') {
-                picinfo = picinfo == 10 ? 1 : picinfo + 1;
+                picinfo = picinfo == 11 ? 1 : picinfo + 1;
                 console.log(picinfo);
             }
             document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='images/p" + picinfo +
