@@ -114,8 +114,10 @@
             9.<input type="checkbox" value="9"><img src="images/p9.png" alt="" id="9" class="onOnKan">
             10.<input type="checkbox" value="10"><img src="images/p10.png" alt="" id="10" class="onOnKan">
             11.<input type="checkbox" value="11"><img src="images/p11.png" alt="" id="11" class="onOnKan">
+            12.<input type="checkbox" value="12"><img src="images/p12.png" alt="" id="12" class="onOnKan">
             </FORM>
         </div>
+        
         <div id="big-box">
             <img src="images/p1.png">
         </div>
@@ -127,13 +129,14 @@
         // if (e.target.id == 'float-box' || e.target.id == 'small-box' || e.target.id == 'left' || e.target.id == 'p' || e.target.id == 'botton' || e.target.id == 'demo' || e.target.id == 'big-box') { }
         // else {
         var picinfo = parseInt(1);
-
+        var onOnKan = document.getElementsByClassName('onOnKan');
+        
         function showBig(e) {
             if (e.target.id == 'up') {
-                picinfo = picinfo == 1 ? 11 : picinfo - 1;
+                picinfo = picinfo == 1 ? onOnKan.length : picinfo - 1;
                 console.log(picinfo);
             } else if (e.target.id == 'down') {
-                picinfo = picinfo == 11 ? 1 : picinfo + 1;
+                picinfo = picinfo == onOnKan.length ? 1 : picinfo + 1;
                 console.log(picinfo);
             }
             document.getElementById('float-box').innerHTML = "<div id='small-box'></div><img src='images/p" + picinfo +
@@ -166,7 +169,7 @@
                 "<img src=https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=" + location.href +
                 "&choe=UTF-8/><br>";
 
-            var onOnKan = document.getElementsByClassName('onOnKan');
+            
             var demo = document.getElementById('demo');
             var smallBbox = document.getElementById('small-box');
             var floatBox = document.getElementById('float-box');
