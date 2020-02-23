@@ -1,1 +1,0 @@
-<?php header( 'Location: /index_form.html' ) ;  ?>
