@@ -365,10 +365,22 @@ p7 {
 }
 
 #img3 {
+    left: 0px;
+    height: 50px;
+    top: 5px;
+}
+
+#img32 {
     left: 100px;
     height: 50px;
     top: 5px;
 }
+
+/* .img3 {
+    left: 20px;
+    height: 50px;
+    top: 5px;
+} */
 
 .bodyn {
     top: 70px;
