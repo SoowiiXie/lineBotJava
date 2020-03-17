@@ -85,6 +85,29 @@
             float: right;
         }
 
+        .sidebar-brand {
+            padding: 0;
+        }
+
+        @media all and (min-width: 768px) {
+            a {
+                color: red;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            a {
+                color: orange;
+            }
+        }
+
+        @media screen and (min-width: 1000px),
+        screen and (max-width: 750px) {
+            p {
+                color: blue;
+            }
+        }
+
     </style>
 </head>
 
@@ -108,6 +131,14 @@
         這是區塊
         <p class="inner_para">段落浮動</p>
     </div>
+
+    <picture>
+        <source
+            srcset="http://notes.carlos-studio.com/images/test_text@2x.png 2x, http://notes.carlos-studio.com/images/test_text.png 1x">
+        <img src="https://alldata.sgp1.digitaloceanspaces.com/images/apple.png">
+    </picture>
+
+    <img src="http://notes.carlos-studio.com/images/test_text@2x.png">
 
     <div>段落</div><br>
     <div>段落</div><br>
