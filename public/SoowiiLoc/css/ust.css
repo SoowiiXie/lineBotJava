@@ -66,10 +66,8 @@ body {
 #postbox {
     height: 105px;
     outline: none;
-
     border: white;
     background: #e9f0f2;
-
     width: 580px;
 }
 
@@ -97,7 +95,6 @@ body {
     width: 600px;
     height: 210px;
     box-sizing: content-box;
-
 }
 
 .post1 {
