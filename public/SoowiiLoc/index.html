@@ -26,6 +26,11 @@
             position: relative;
         }
 
+        html {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         .navbar {
             position: relative;
             top: 0px;
@@ -66,7 +71,8 @@
             height: 4000px;
         }
 
-        #contentTop .btn {
+        #contentTop .btn,
+        #contentRight .btn {
             height: 2.25rem;
             position: sticky;
             top: 0px;
@@ -81,7 +87,8 @@
             padding-top: 4rem;
         }
 
-        #contentLeft>* {
+        #contentLeft>*,
+        #contentRight div {
             position: sticky;
             top: 4rem;
         }
@@ -338,38 +345,28 @@
                     </div>
                 </a>
 
-                <!-- Divider -->
-                <hr class="sidebar-divider my-0" />
-
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
+                    <!-- <li class="nav-item"> -->
                     <a class="nav-link" href="index2.html">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>會員</span></a>
+                        <i class="fas fa-fw fa-thumbs-up"></i>
+                        <span>個人<img src="img/ya.png" alt="" class="fas fa-fw">面</span></a>
                 </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider" />
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    準備出發
-                </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                         aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>天氣</span>
+                        <i class="fas fa-fw fa-cloud-sun-rain"></i>
+                        <span>準備</span>
                     </a>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">
+                            <!-- <h6 class="collapse-header">
                                 Custom Components:
-                            </h6>
-                            <a class="collapse-item" href="buttons.html">Buttons</a>
-                            <a class="collapse-item" href="cards.html">Cards</a>
+                            </h6> -->
+                            <a class="collapse-item" href="buttons.html">天氣</a>
+                            <a class="collapse-item" href="cards.html">地標</a>
                         </div>
                     </div>
                 </li>
@@ -378,75 +375,42 @@
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>地標</span>
+                        <i class="fas fa-fw fa-handshake"></i>
+                        <span>揪團</span>
                     </a>
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">
-                                Custom Utilities:
-                            </h6>
-                            <a class="collapse-item" href="utilities-color.html">Colors</a>
-                            <a class="collapse-item" href="utilities-border.html">Borders</a>
-                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
+                            <a class="collapse-item" href="utilities-color.html">開團</a>
+                            <a class="collapse-item" href="utilities-border.html">瀏覽揪團</a>
+                            <a class="collapse-item" href="utilities-animation.html">我的揪團</a>
                         </div>
                     </div>
                 </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider" />
-
-                <!-- Heading -->
-                <div class="sidebar-heading">
-                    Addons
-                </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                         aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>紀錄</span>
+                        <i class="fas fa-fw fa-store"></i>
+                        <span>商城</span>
                     </a>
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Login Screens:</h6>
-                            <a class="collapse-item" href="login.html">Login</a>
-                            <a class="collapse-item" href="register.html">Register</a>
-                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Other Pages:</h6>
-                            <a class="collapse-item" href="404.html">404 Page</a>
-                            <a class="collapse-item" href="blank.html">Blank Page</a>
+                            <a class="collapse-item" href="login.html">瀏覽商城</a>
+                            <a class="collapse-item" href="register.html">購物車</a>
+                            <a class="collapse-item" href="forgot-password.html">我的訂單</a>
                         </div>
                     </div>
                 </li>
-
-                <!-- Nav Item - Charts -->
-                <li class="nav-item">
-                    <a class="nav-link" href="charts.html">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>揪團</span></a>
-                </li>
-
-                <!-- Nav Item - Tables -->
-                <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-fw fa-table"></i>
-                        <span>商城</span></a>
-                </li>
-
-                <!-- Divider -->
-                <hr class="sidebar-divider d-none d-md-block" />
 
                 <!-- Sidebar Toggler (Sidebar) -->
                 <div id="sidebarToggleDiv">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
             </div>
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -473,69 +437,75 @@
                 </a>
             </div>
 
-            <div id="contentInside" class="bg-success col-3">
-                里程紀錄
-                <div class="row" id="contentAll">
+            <div id="contentRight" class="col-3">
+                <a href="https://javababy.herokuapp.com/SoowiiLoc/index.html" class="btn btn-primary col-11">
+                    <b>上傳紀錄</b>
+                </a><br><br>
+                <div class="sidebar-statis card--5 shadow-z1 bg-white col-11 rounded">
+                    <h4 class="nake-title--sidebar">跑量統計</h4>
+                    <div class="statis-chart">
+                        <!-- <canvas id="week_chart" width="300" height="200"></canvas> -->
+                        <img src="img/statistics.png" alt="" class="col-12">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- End of Main Content -->
+            <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <!-- <footer class="sticky-footer bg-white">
+            <!-- Footer -->
+            <!-- <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Your Website 2019</span>
                     </div>
                 </div>
             </footer> -->
-        <!-- End of Footer -->
-    </div>
-    <!-- End of Content Wrapper -->
-    <!-- </div> -->
-    <!-- End of Page Wrapper -->
+            <!-- End of Footer -->
+        </div>
+        <!-- End of Content Wrapper -->
+        <!-- </div> -->
+        <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Ready to Leave?
-                    </h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Select "Logout" below if you are ready to end your
-                    current session.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">
-                        Cancel
-                    </button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            Ready to Leave?
+                        </h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Select "Logout" below if you are ready to end your
+                        current session.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                            Cancel
+                        </button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 </body>
 
 </html>
