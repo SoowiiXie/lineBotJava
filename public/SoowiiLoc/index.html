@@ -105,6 +105,14 @@
             width: 100%;
         }
 
+        #sidebarToggleDiv {
+            padding-top: 1rem;
+        }
+
+        /* #searchBar {
+            float: right !important;
+        } */
+
     </style>
 </head>
 
@@ -115,14 +123,15 @@
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
         </button>
-        <div class="topPic">
+        <div class="topPic mr-5 ml-5">
             <img src="LogoText2.png" />
         </div>
 
         <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+            id="searchBar">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                <input type="text" class="form-control bg-light border-0 small" placeholder="查詢會員..."
                     aria-label="Search" aria-describedby="basic-addon2" />
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
@@ -335,20 +344,15 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <div id="stikyDiv">
-                <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                    <div class="sidebar-brand-icon">
-                        <img src="../images/LogoNoBack.png" alt="" width="80px" />
-                    </div>
-                    <div class="sidebar-brand-text mx-3">
-                        ru<i>nn</i>able&nbsp&nbsp&nbsp&nbsp&nbsp
-                    </div>
-                </a>
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div id="sidebarToggleDiv">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <!-- <li class="nav-item"> -->
-                    <a class="nav-link" href="index2.html">
+                    <a class="nav-link" href="index.html">
                         <i class="fas fa-fw fa-thumbs-up"></i>
                         <span>個人<img src="img/ya.png" alt="" class="fas fa-fw">面</span></a>
                 </li>
@@ -390,25 +394,32 @@
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                        aria-expanded="true" aria-controls="collapsePages">
+                    <a class="nav-link collapsed" href="../VainPd/eShopHome.html" data-toggle="collapse"
+                        data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                         <i class="fas fa-fw fa-store"></i>
                         <span>商城</span>
                     </a>
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="login.html">瀏覽商城</a>
+                            <a class="collapse-item" href="../VainPd/eShopHome.html">瀏覽商城</a>
                             <a class="collapse-item" href="register.html">購物車</a>
                             <a class="collapse-item" href="forgot-password.html">我的訂單</a>
                         </div>
                     </div>
                 </li>
 
-                <!-- Sidebar Toggler (Sidebar) -->
-                <div id="sidebarToggleDiv">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <div class="sidebar-brand-icon">
+                        <img src="../images/LogoNoBack.png" alt="" width="80px" />
+                    </div>
+                    <div class="sidebar-brand-text mx-3">
+                        ru<i>nn</i>able&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </div>
+                </a>
+
+
             </div>
 
         </ul>
@@ -429,20 +440,20 @@
                 <div class="live btn btn-secondary">查看全部</div>
             </div>
             <div class="col-6 btn-group" id="contentTop">
-                <a href="https://javababy.herokuapp.com/SoowiiLoc/index.html" class="btn btn-primary col-6">
+                <a href="index.html" class="btn btn-primary col-6">
                     <b>紀錄</b>
                 </a>
-                <a href="https://javababy.herokuapp.com/SoowiiLoc/index.html" class="btn bg-white col-6">
+                <a href="index.html" class="btn bg-white col-6">
                     <b>追蹤</b>
                 </a>
             </div>
 
             <div id="contentRight" class="col-3">
-                <a href="https://javababy.herokuapp.com/SoowiiLoc/index.html" class="btn btn-primary col-11">
+                <a href="index.html" class="btn btn-primary col-11">
                     <b>上傳紀錄</b>
                 </a><br><br>
-                <div class="sidebar-statis card--5 shadow-z1 bg-white col-11 rounded">
-                    <h4 class="nake-title--sidebar">跑量統計</h4>
+                <div class="sidebar-statis card--5 shadow-z1 bg-white col-11 rounded p-1">
+                    <h4 class="nake-title--sidebar medium m-3">跑量統計</h4>
                     <div class="statis-chart">
                         <!-- <canvas id="week_chart" width="300" height="200"></canvas> -->
                         <img src="img/statistics.png" alt="" class="col-12">
@@ -491,7 +502,7 @@
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">
                             Cancel
                         </button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <a class="btn btn-primary" href="../XuanMb/Login/Login.html">Logout</a>
                     </div>
                 </div>
             </div>
