@@ -36,12 +36,23 @@
             top: 0px;
         }
 
-        #accordionSidebar>*,
+        /* #accordionSidebar>*, */
+        #stikyDiv,.collapseTwo,
         #contentTop {
             position: sticky !important;
             top: 0px !important;
         }
 
+        .collapseTwo > *,.collapseTwo{
+            width: 90% !important;
+            min-width: 0px !important;
+            left: 0.1rem !important;
+            
+        }
+
+        .collapse-item{
+            padding: 0.5rem !important;
+        }
         .topPic {
             height: 100%;
         }
@@ -362,7 +373,7 @@
                         <i class="fas fa-fw fa-cloud-sun-rain"></i>
                         <span>準備</span>
                     </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div id="collapseTwo" class="collapse collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <!-- <h6 class="collapse-header">
                                 Custom Components:
@@ -380,7 +391,7 @@
                         <i class="fas fa-fw fa-handshake"></i>
                         <span>揪團</span>
                     </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    <div id="collapseUtilities" class="collapse collapseTwo" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="utilities-border.html">瀏覽揪團</a>
@@ -397,7 +408,7 @@
                         <i class="fas fa-fw fa-store"></i>
                         <span>商城</span>
                     </a>
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                    <div id="collapsePages" class="collapse collapseTwo" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item" href="../VainPd/eShopHome.html">瀏覽商城</a>
