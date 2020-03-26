@@ -37,22 +37,24 @@
         }
 
         /* #accordionSidebar>*, */
-        #stikyDiv,.collapseTwo,
+        #stikyDiv,
+        .collapseTwo,
         #contentTop {
             position: sticky !important;
             top: 0px !important;
         }
 
-        .collapseTwo > *,.collapseTwo{
+        .collapseTwo>*,
+        .collapseTwo {
             width: 90% !important;
             min-width: 0px !important;
             left: 0.1rem !important;
-            
         }
 
-        .collapse-item{
+        .collapse-item {
             padding: 0.5rem !important;
         }
+
         .topPic {
             height: 100%;
         }
@@ -118,9 +120,23 @@
             padding-top: 1rem;
         }
 
-        /* #searchBar {
-            float: right !important;
-        } */
+        nav.my_breadcrumb ol.breadcrumb {
+            background-color: rgb(229, 233, 236);
+        }
+
+
+        nav.my_breadcrumb ol.breadcrumb .breadcrumb-item>a {
+            color: rgb(154, 185, 250);
+        }
+
+        nav.my_breadcrumb ol.breadcrumb .breadcrumb-item.active {
+            color: rgb(78, 115, 223);
+        }
+
+        nav.my_breadcrumb ol.breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+            content: ">";
+            color: rgb(154, 185, 250);
+        }
 
     </style>
 </head>
@@ -373,7 +389,8 @@
                         <i class="fas fa-fw fa-cloud-sun-rain"></i>
                         <span>準備</span>
                     </a>
-                    <div id="collapseTwo" class="collapse collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div id="collapseTwo" class="collapse collapseTwo" aria-labelledby="headingTwo"
+                        data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <!-- <h6 class="collapse-header">
                                 Custom Components:
@@ -394,7 +411,7 @@
                     <div id="collapseUtilities" class="collapse collapseTwo" aria-labelledby="headingUtilities"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="utilities-border.html">瀏覽揪團</a>
+                            <a class="collapse-item" href="../ZacharyGrp/webFront/group.html">瀏覽揪團</a>
                             <a class="collapse-item" href="utilities-animation.html">我的揪團</a>
                             <a class="collapse-item" href="utilities-color.html">開團</a>
                         </div>
@@ -411,7 +428,7 @@
                     <div id="collapsePages" class="collapse collapseTwo" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <a class="collapse-item" href="../VainPd/eShopHome.html">瀏覽商城</a>
+                            <a class="collapse-item" href="../VainPd/forestage_html/eShopHome.html">瀏覽商城</a>
                             <a class="collapse-item" href="register.html">購物車</a>
                             <a class="collapse-item" href="forgot-password.html">我的訂單</a>
                         </div>
@@ -438,7 +455,13 @@
         <!-- <div id="content-wrapper" class="d-flex flex-column"> -->
         <!-- Main Content -->
         <div class="row">
-            <div class="col-3">&nbsp&nbsp個人頁面</div>
+            <!-- <div class="col-3">&nbsp&nbsp個人頁面</div> -->
+            <nav aria-label="breadcrumb" class="my_breadcrumb">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
 
             <div class="w-100"></div>
             <div id="contentLeft" class="col-3 navbar-nav">

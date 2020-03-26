@@ -1,6 +1,7 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
+<meta charset="UTF-8">
 <style type="text/css" media="screen">
 #page {
 margin-right:8px;
@@ -29,7 +30,7 @@ float:left;
 }
 .search_pd{
 height:100px;
-width:200px; 
+width:300px; 
 background-color:#FFFFB9;
 float:left;
 position: relative;
@@ -38,8 +39,8 @@ position: relative;
 position: absolute;  
 margin-top:70px;
 }
-.shopping_trolley{
-margin-left:600px;
+.backhome{
+margin-left:500px;
 height:100px;
 width:100px; 
 background-color:#FDFFFF;
@@ -47,7 +48,7 @@ position: static;
 line-height:100px; 
 float:left;
 }
-.backhome{
+.shopping_trolley{
 height:100px;
 width:100px; 
 background-color:#DCB5FF;
@@ -137,7 +138,7 @@ margin-top:10px;
 height:60px;
 width:100%; 
 background-color:#D2E9FF;
-text-align: center;
+
 }
 .fifth{
 margin-top:10px; 
@@ -145,6 +146,19 @@ height:1300px;
 width:100%; 
 background-color:#D2E9FF;
 text-align: center;
+
+}
+.div_dropdownMenu{
+height:60px;
+width:200px;
+margin-right:200px;   
+background-color:#FFFFB9;
+margin-left:1250px;
+position: relative;
+}
+.dropdownMenu{
+margin-top:30px;
+position: absolute;
 }
 .aaa{
 text-align: center;
@@ -162,11 +176,11 @@ height:400px;
      <div class="logo" align="center">運動筆記Logo</div>
      <div class="search_pd" >
       <form class="search_form" action="XXX">
-        <input type="search" name="search" placeholder="Enter keyword" style="font-size: 100px;">
+        <input type="search" name="search" placeholder="Enter keyword" style="width:250px;height:100px;">
         <input type="submit" value="搜尋" >  
       </form></div>
-      <div class="shopping_trolley" align="center">回到首頁</div>
-      <div class="backhome" align="center">購物車</div>
+      <div class="backhome" align="center">回到首頁</div>
+      <div class="shopping_trolley" align="center">購物車</div>
       <div class="member" align="center">會員</div>
     </div>
     <div class="bar_lift"></div>
@@ -174,58 +188,72 @@ height:400px;
      <div class="Topmenu">
         Men<br>
         <div class="Topmenuin">
-        <span>History</span>
-        <span>Awards</span>
-        <span>Pepole</span>
+        <span>上身</span>
+        <span>下身</span>
+        <span>鞋子</span>
         </div>
         </div>
         <div class="Topmenu">
         Women<br>
         <div class="Topmenuin">
-        <span>History</span>
-        <span>Awards</span>
-        <span>Pepole</span>
+        <span>上身</span>
+        <span>下身</span>
+        <span>鞋子</span>
+        </div>
+        </div>
+        <div class="Topmenu">
+        Kids<br>
+        <div class="Topmenuin">
+        <span>上身</span>
+        <span>下身</span>
+        <span>鞋子</span>
         </div>
         </div>
         <div class="Topmenu">
         Accessories<br>
         <div class="Topmenuin">
-        <span>History</span>
-        <span>Awards</span>
-        <span>Pepole</span>
+        <span>穿戴護具</span>
+        <span>居家配件</span>
+        <span>水壺</span>
         </div>
         </div>
         <div class="Topmenu">
         Health Food<br>
         <div class="Topmenuin">
-        <span>History</span>
-        <span>Awards</span>
-        <span>Pepole</span>
+        <span>能量飲料</span>
+        <span>乳清</span>
+        <span>減脂餐</span>
         </div>
         </div> 
      
     </div>
-    <div class="third" align="center" >跑馬燈圖片<!-- <img src="1200_9c28240850cfc535ef8674845ee62fe7.jpg" > --></div>
-    <div class="forth">放置用的div</div>
+    <div class="third" align="center" ><img src="跑馬燈圖片.jpg" alt="跑馬燈圖片"></div>
+    <div class="forth"><div class="div_dropdownMenu">  <form class="dropdownMenu">
+<select name="最新">
+　<option value="Taipei">最新</option>
+　<option value="Taoyuan">最舊</option>
+</select>
+</form></div>
+</div>
     <div class="fifth">商品表格
     <table border="1" align="center">
 　<tr>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
+<td class="aaa"><a href="eShopPd.html"><img src="商品圖.jpg" alt="商品"></a></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
 　</tr>
 　<tr>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
 　</tr>
 　<tr>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
-<td class="aaa">商品</td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
+<td class="aaa"><img src="XXX" alt="商品"></td>
 　</tr>
 </table>
 
