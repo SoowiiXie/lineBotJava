@@ -111,13 +111,14 @@
             margin: 0.25rem auto;
             padding: 0.1rem;
             overflow: hidden;
+            /* display: table; */
         }
 
         .live img {
             border-radius: 10px;
             width: 100%;
-            overflow: hidden;
-            vertical-align: middle;
+            /* display: table-cell;
+            vertical-align: middle; */
         }
 
         .row {
@@ -147,6 +148,20 @@
             color: rgb(154, 185, 250);
         }
 
+        #searchBar,
+        .navbar-nav {
+            float: right;
+        }
+
+        .navbar>* {
+            padding-right: 0px;
+            float: right;
+        }
+
+        .navbar {
+            padding-right: 0px;
+        }
+
     </style>
 </head>
 
@@ -162,7 +177,7 @@
         </div>
 
         <!-- Topbar Search -->
-        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+        <form class="d-none d-sm-inline-block form-inline mr-0 ml-md-3 my-2 my-md-0 mw-100 navbar-search"
             id="searchBar">
             <div class="input-group">
                 <input type="text" class="form-control bg-light border-0 small" placeholder="查詢會員..."
@@ -176,7 +191,7 @@
         </form>
 
         <!-- Topbar Navbar -->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-0">
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
