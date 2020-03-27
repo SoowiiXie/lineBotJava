@@ -55,8 +55,14 @@
             padding-left: 0.1rem !important;
         }
 
-        #topPic {
-            height: 100%;
+        .topPic {
+            /* height: 100%; */
+            width: 100%;
+        }
+        #topPicA{
+            padding: 0 !important;
+            left: -0.2rem;
+            background-color: rgba(255,255,255,0) !important;
         }
 
         .topPic img {
@@ -181,11 +187,18 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <div id="stikyDiv">
-                <!-- Sidebar Toggler (Sidebar) -->
-                <div id="sidebarToggleDiv">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                </div>
-
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" id="topPicA" href="index.html">
+                    <div class="sidebar-brand-icon">
+                        <img src="../images/LogoNoBack.png" class="topPic" />
+                        <!-- <img src="../images/LogoText2.png" class="topPic"> -->
+                    </div>
+                    <div class="sidebar-brand-text mx-3">
+                        ru<i>nn</i>able&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <!-- <img src="../images/LogoText2.png" class="topPic"> -->
+                    </div>
+                </a>
+                
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
                     <!-- <li class="nav-item"> -->
@@ -246,20 +259,11 @@
                         </div>
                     </div>
                 </li>
-
-                <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                    <div class="sidebar-brand-icon">
-                        <img src="../images/LogoNoBack.png" alt="" width="80px" />
-                    </div>
-                    <div class="sidebar-brand-text mx-3">
-                        ru<i>nn</i>able&nbsp&nbsp&nbsp&nbsp&nbsp
-                    </div>
-                </a>
-
-
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div id="sidebarToggleDiv">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
             </div>
-
         </ul>
         <!-- End of Sidebar -->
 
@@ -273,8 +277,7 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
                     <i class="fa fa-bars"></i>
                 </button>
-                <img src="../images/LogoText2.png" id="topPic">
-
+                
                 <!-- <div id="navbarRight"> -->
                 <!-- Topbar Search -->
                 <form class="d-none d-sm-inline-block form-inline ml-md-3 my-2 my-md-0 mw-100 navbar-search"
