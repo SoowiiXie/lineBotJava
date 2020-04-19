@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>揪團</title>
+    <title>訂單</title>
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -14,7 +14,7 @@
             var userid = data.context.userId; //取得ID
         }
 
-        function pushMsg(plamb_idce, gender, phone) {
+        function pushMsg(mb_id, gender, phone) {
             if (mb_id == '' || gender == '' || phone == '') { //資料檢查
                 alert('每個項目都必須輸入！');
                 return;
