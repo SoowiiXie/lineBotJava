@@ -129,39 +129,6 @@ public class KitchenSinkController {
     }
 
     @EventMapping
-    public void handleImageMessageEvent(MessageEvent<ImageMessageContent> event){
-        // You need to install ImageMagick
-    	try {
-	        handleHeavyContent(
-	                event.getReplyToken(),
-	                event.getMessage().getId(),
-	                responseBody -> {
-	                	throw new Exception();
-	                    final ContentProvider provider = event.getMessage().getContentProvider();
-	                    final DownloadedContent jpg;
-	                    final DownloadedContent previewImg;
-	                    if (provider.isExternal()) {
-	                        jpg = new DownloadedContent(null, provider.getOriginalContentUrl());
-	                        previewImg = new DownloadedContent(null, provider.getPreviewImageUrl());
-	                    } else {
-	                        jpg = saveContent("jpg", responseBody);
-	                        previewImg = createTempFile("jpg");
-	                        system(
-	                                "convert",
-	                                "-resize", "240x",
-	                                jpg.path.toString(),
-	                                previewImg.path.toString());
-	                    }
-	                    reply(event.getReplyToken(),
-	                          new ImageMessage(jpg.getUri(), previewImg.getUri()));
-	                }
-	                );
-    	}catch(Exception e) {
-    		
-    	}
-    }
-
-    @EventMapping
     public void handleAudioMessageEvent(MessageEvent<AudioMessageContent> event) throws IOException {
         handleHeavyContent(
                 event.getReplyToken(),
