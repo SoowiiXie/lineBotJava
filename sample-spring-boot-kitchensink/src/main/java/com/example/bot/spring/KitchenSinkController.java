@@ -239,7 +239,8 @@ public class KitchenSinkController {
     @EventMapping
     public void handleMemberJoined(MemberJoinedEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "歡迎狼窩\n「狼窩桌遊群新手十大Q&A」\n\n1. 我想要查詢自己出席次數？\n答：https://reurl.cc/D90Nbm\n\n2. 我想要查詢每次的活動收支？\n答：https://reurl.cc/R4NK9D\n\n3. 我想要揪團！請問發文的格式是？");
+        this.replyText(replyToken, "歡迎狼窩\n「狼窩桌遊群新手十大Q&A」\n\n1. 我想要查詢自己出席次數？\n答：https://reurl.cc/D90Nbm\n\n2. 我想要查詢每次的活動收支？\n答：https://reurl.cc/R4NK9D\n\n3. 我想要揪團！請問發文的格式是？\n答：\n/範例/\n時間：２/1（六）18:00-21:00\n遊戲：狼人殺 和 其他視人數的桌遊\n費用：1小時/90元/1人 or 4小時/300元/1人\n地點：遊戲平方市府店\n地址：信義區忠孝東路五段31巷18弄4號 (市政府捷運站１號出口步行１分鐘)\n新手：可\n內建：1人\n預揪：5-10人，6人成團，不滿6人流局\n/範例/\n\n4. 請問我揪桌遊團可以幹嘛？\n" 
+        		);
     }
 
     @EventMapping
