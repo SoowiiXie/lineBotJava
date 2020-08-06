@@ -150,7 +150,7 @@ public class KitchenSinkController {
                                 jpg.path.toString(),
                                 previewImg.path.toString());
                     }
-                    reply(event.getReplyToken(),"");
+                    reply(event.getReplyToken(),null);
                 }
                 );
     }
