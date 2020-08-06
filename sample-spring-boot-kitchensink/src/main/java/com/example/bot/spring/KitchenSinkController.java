@@ -239,14 +239,7 @@ public class KitchenSinkController {
     @EventMapping
     public void handleMemberJoined(MemberJoinedEvent event) {
         String replyToken = event.getReplyToken();
-        this.replyText(replyToken, "歡迎狼窩%0D%0A "
-        		+ "「狼窩桌遊群新手十大Q&A」%0D%0A " + 
-        		"%0D%0A " + 
-        		"1. 我想要查詢自己出席次數？%0D%0A " + 
-        		"答：https://reurl.cc/D90Nbm%0D%0A " + 
-        		"%0D%0A " + 
-        		"2. 我想要查詢每次的活動收支？%0D%0A " + 
-        		"答：https://reurl.cc/R4NK9D");
+        this.replyText(replyToken, "歡迎狼窩%0D%0A「狼窩桌遊群新手十大Q&A」%0D%0A %0D%0A 1. 我想要查詢自己出席次數？%0D%0A");
     }
 
     @EventMapping
