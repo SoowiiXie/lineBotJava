@@ -132,11 +132,11 @@ public class KitchenSinkController {
     public void handleImageMessageEvent(MessageEvent<ImageMessageContent> event){
         // You need to install ImageMagick
     	try {
-    		throw new Exception();
 	        handleHeavyContent(
 	                event.getReplyToken(),
 	                event.getMessage().getId(),
 	                responseBody -> {
+	                	throw new Exception();
 	                    final ContentProvider provider = event.getMessage().getContentProvider();
 	                    final DownloadedContent jpg;
 	                    final DownloadedContent previewImg;
