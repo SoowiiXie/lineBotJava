@@ -133,8 +133,8 @@ public class KitchenSinkController {
         // You need to install ImageMagick
         handleHeavyContent(
                 event.getReplyToken(),
-                event.getMessage().getId(),
-                responseBody -> {
+                event.getMessage().getId()
+//                responseBody -> {
 //                    final ContentProvider provider = event.getMessage().getContentProvider();
 //                    final DownloadedContent jpg;
 //                    final DownloadedContent previewImg;
@@ -152,7 +152,8 @@ public class KitchenSinkController {
 //                    }
 //                    reply(event.getReplyToken(),
 //                          new ImageMessage(jpg.getUri(), previewImg.getUri()));
-                });
+//                }
+                );
     }
 
     @EventMapping
